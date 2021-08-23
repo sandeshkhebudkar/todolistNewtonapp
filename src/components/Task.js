@@ -8,7 +8,7 @@ import isBefore from 'date-fns/isBefore';
 import addDays from 'date-fns/addDays';
 import isToday from 'date-fns/isToday';
 
-const FORMAT="dd/mm/yyyy";
+const FORMAT="dd/MM/yyyy";
 function formatDate(date, format, locale) {
     return dateFnsFormat(date, format, { locale });
   }
@@ -64,10 +64,13 @@ const TaskItem=({selectedTab,tasks}) => {
         if(selectedTab === 'NEXT_7'){
             return tasks.filter(task => isAfter(task.date, new Date()) && 
             isBefore(task.date,addDays(new Date(),7))).map(task=>{
-                return(<p>
-                    {task.text}{" "}{dateFnsFormat(new Date(task.date),FORMAT)}
-                </p>)
-            })
+                return(<div className="task-items-container">
+                <div className="task-item"><p>
+                    {task.text}</p><p>{dateFnsFormat(new Date(task.date),FORMAT)}</p>
+                </div>
+            </div>
+
+            )})
         }
 
         if(selectedTab === 'TODAY'){

@@ -62,8 +62,8 @@ body {
 }
 .tasks {
   background-color: white;
-  height: 100vh;
-  width: calc(922px-266px);
+  height: 90vh;
+  width: 60%;
   padding: 74px 20px 0;
 
   .add-task-btn {
@@ -89,7 +89,7 @@ body {
       padding-left: 10px;
       padding-right: 10px;
     }
-    .add-task-actions-container {
+    .add-task-action-container {
       margin-top: 10px;
       display: flex;
       justify-content: space-between;
